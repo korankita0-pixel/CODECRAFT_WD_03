@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LocalMart | Local Store</title>
+
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+  <header class="navbar">
+    <div class="logo">🛒 LocalMart</div>
+
+    <div class="search-box">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search products..."
+      >
+      <button id="searchBtn">Search</button>
+    </div>
+
+    <button class="cart-btn" id="cartBtn">
+      🛍️ Cart <span id="cartCount">0</span>
+    </button>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div>
+        <p class="hero-tag">YOUR LOCAL STORE, ONLINE</p>
+
+        <h1>
+          Fresh products.<br>
+          Delivered locally.
+        </h1>
+
+        <p>
+          Shop everyday essentials from your trusted local store.
+        </p>
+
+        <button class="shop-btn" onclick="scrollToProducts()">
+          Shop Now
+        </button>
+      </div>
+    </section>
+
+    <section class="categories-section">
+      <h2>Shop by Category</h2>
+
+      <div class="categories">
+
+        <button class="category-btn active" data-category="all">
+          All
+        </button>
+
+        <button class="category-btn" data-category="Groceries">
+          🥦 Groceries
+        </button>
+
+        <button class="category-btn" data-category="Fruits">
+          🍎 Fruits
+        </button>
+
+        <button class="category-btn" data-category="Vegetables">
+          🥕 Vegetables
+        </button>
+
+        <button class="category-btn" data-category="Dairy">
+          🥛 Dairy
+        </button>
+
+        <button class="category-btn" data-category="Snacks">
+          🍪 Snacks
+        </button>
+
+      </div>
+    </section>
+
+    <section class="products-section" id="productsSection">
+
+      <div class="section-heading">
+
+        <div>
+          <p class="small-title">LOCALMART COLLECTION</p>
+          <h2>Popular Products</h2>
+        </div>
+
+        <span id="productCount"></span>
+
+      </div>
+
+      <div id="productsContainer" class="products-grid">
+        <div class="loading">
+          Loading products...
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Cart Modal -->
+
+  <div id="cartModal" class="modal">
+
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h2>Your Cart</h2>
+
+        <button id="closeCart" class="close-btn">
+          &times;
+        </button>
+      </div>
+
+      <div id="cartItems"></div>
+
+      <div class="cart-footer">
+
+        <strong>
+          Total: ₹<span id="cartTotal">0</span>
+        </strong>
+
+        <button id="checkoutBtn" class="checkout-btn">
+          Checkout
+        </button>
+
+      </div>
+
+      <!-- Checkout Form -->
+
+      <div
+        id="checkoutForm"
+        class="checkout-form"
+        style="display: none;"
+      >
+
+        <h3>Delivery Details</h3>
+
+        <input
+          type="text"
+          id="customerName"
+          placeholder="Your full name"
+          required
+        >
+
+        <input
+          type="tel"
+          id="customerPhone"
+          placeholder="10-digit phone number"
+          maxlength="10"
+          required
+        >
+
+        <textarea
+          id="customerAddress"
+          placeholder="Complete delivery address"
+          rows="4"
+          required
+        ></textarea>
+
+        <button
+          id="placeOrderBtn"
+          class="checkout-btn"
+        >
+          Place Order
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="/js/script.js"></script>
+
+</body>
+</html>
